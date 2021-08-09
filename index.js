@@ -1,4 +1,4 @@
-import * as imzml from "./wasm/imzml_validator.js";
+import * as imzml from "./imzml_validator.js";
 
 var enc = new TextEncoder();
 
