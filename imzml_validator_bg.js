@@ -1,4 +1,4 @@
-import * as wasm from './imzml_validator_bg.wasm';
+let wasm;
 
 const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
 
