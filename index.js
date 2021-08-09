@@ -1,5 +1,5 @@
-import init from "./imzml_validator.js";
-init().then(imzml => {	
+import * as imzml from "./imzml_validator.js";
+imzml.init().then(imzml => {	
 	console.log(imzml);
 
 	var enc = new TextEncoder();
