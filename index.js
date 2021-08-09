@@ -1,9 +1,9 @@
-import * as wasm from "wasm-test";
+import * as imzml from "wasm/imzml_validator";
 
 var enc = new TextEncoder();
 
 var t0 = performance.now()
-let p = wasm.Parser.parse(enc.encode("<test></test>"));
+let p = imzml.Parser.parse(enc.encode("<test></test>"));
 var t1 = performance.now()
 console.log("Parsing test took " + (t1 - t0) + " milliseconds.")
 console.log(p);
@@ -34,7 +34,7 @@ document.querySelector("#read-file").addEventListener('click', function() {
         var t0 = performance.now()
 
         let array = new Uint8Array(e.target.result);
-        let p = wasm.Parser.parse(array);
+        let p = imzml.Parser.parse(array);
 
         var t1 = performance.now()
 
