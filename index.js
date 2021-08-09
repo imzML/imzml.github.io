@@ -1,11 +1,11 @@
-import * as imzml from "./imzml_validator.js";
-imzml.init().then(imzml => {	
+import init, {Parser} from "./imzml_validator.js";
+init().then(imzml => {	
 	console.log(imzml);
 
 	var enc = new TextEncoder();
 
 	var t0 = performance.now()
-	let p = imzml.Parser.parse(enc.encode("<test></test>"));
+	let p = Parser.parse(enc.encode("<test></test>"));
 	var t1 = performance.now()
 	console.log("Parsing test took " + (t1 - t0) + " milliseconds.")
 	console.log(p);
@@ -37,7 +37,7 @@ document.querySelector("#read-file").addEventListener('click', function() {
         var t0 = performance.now()
 
         let array = new Uint8Array(e.target.result);
-        let p = imzml.Parser.parse(array);
+        let p = Parser.parse(array);
 
         var t1 = performance.now()
 
