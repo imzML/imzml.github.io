@@ -1,5 +1,6 @@
 import init from "./imzml_validator.js";
 let imzml = init();
+console.log(imzml);
 
 var enc = new TextEncoder();
 
