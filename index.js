@@ -1,17 +1,18 @@
 import init from "./imzml_validator.js";
-let imzml = init();
-console.log(imzml);
+init().then(imzml => {	
+	console.log(imzml);
 
-var enc = new TextEncoder();
+	var enc = new TextEncoder();
 
-var t0 = performance.now()
-let p = imzml.Parser.parse(enc.encode("<test></test>"));
-var t1 = performance.now()
-console.log("Parsing test took " + (t1 - t0) + " milliseconds.")
-console.log(p);
-while(p.errors()) {
-    console.log(p.get_next_error());
-}
+	var t0 = performance.now()
+	let p = imzml.Parser.parse(enc.encode("<test></test>"));
+	var t1 = performance.now()
+	console.log("Parsing test took " + (t1 - t0) + " milliseconds.")
+	console.log(p);
+	while(p.errors()) {
+	    console.log(p.get_next_error());
+	}
+});
 
 //var tickAddDot;
 
