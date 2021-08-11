@@ -29,8 +29,8 @@
 
   <div class="validator">
     <h5>Validator</h5>
-    <p>This validator is a proof of principal and remains a work in progress. Select your .imzML file using the file browser below, and click 'Validate'. If you 
-      experience any issues with the validator, <a href="https://github.com/imzML/imzml.github.io/issues/new">please let us know</a>.
+    <p>This validator is a proof of concept and remains a work in progress. Select your .imzML file using the file browser below, and click 'Validate'. If you 
+      experience any issues with the validator, <a href="https://github.com/imzML/imzml.github.io/issues">please let us know</a>.
     </p>
     <span><b>Note</b>: This tool is written using <a href="https://webassembly.org/">WebAssembly</a>, meaning that your
       data never leaves your computer.</span>
@@ -42,11 +42,27 @@
     <div id="validationResults">
 
     </div>
+    <div id="dataSummary" style="display: none;">
+      <table>
+        <tr>
+          <td role="rowheader">Dimensions (pixels)</td>
+          <td id="dimensions"></td>
+        </tr>
+        <tr>
+          <td role="rowheader">Pixel size (μm)</td>
+          <td id="pixelSize"></td>
+        </tr>
+        <tr>
+          <td role="rowheader">TIC Image</td>
+          <td id="ticImage"></td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <h4>Reading imzML</h4>
   <p>A number of parsers exist for reading imzML. The table below summarises which language(s) the parsers support and their speed at reading selected publically available datasets.
-    If a parser is missing from the list, please consider <a href="https://github.com/imzML/imzml.github.io/issues/new">letting us know</a>.
+    If a parser is missing from the list, please consider <a href="https://github.com/imzML/imzml.github.io/issues">letting us know</a>.
   </p>
   <table>
     <thead>
