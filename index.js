@@ -37,7 +37,7 @@ document.querySelector("#read-file").addEventListener('click', function() {
 		var t0 = performance.now()
 		
 		let array = new Uint8Array(e.target.result);
-		let parser = imzml.Parser.parse(array);
+		let parser = Parser.parse(array);
 
 		var t1 = performance.now()
 
