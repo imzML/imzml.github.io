@@ -139,6 +139,42 @@
         <td><b>0.32 s</b></td>
         <td><b>0.51 s</b></td>
       </tr>
+      <tr style="background-color: #EEE;">
+        <td><a href="http://www.strimmerlab.org/software/maldiquant/">MALDIquantForeign</a></td>
+        <td>
+          <ul>
+            <li>R</li>
+          </ul>
+        </td>
+        <td></td>
+        <td>18.66 s*</td>
+        <td>Failed†</td>
+        <td>Failed†</td>
+      </tr>
+      <tr style="background-color: #f4f4f4;">
+        <td><a href="https://cardinalmsi.org/">Cardinal</a></td>
+        <td>
+          <ul>
+            <li>R</li>
+          </ul>
+        </td>
+        <td></td>
+        <td>1.91 s (0.25 s)‡</td>
+        <td>5.51 s (0.57 s)‡</td>
+        <td>11.73 s (0.66 s)‡</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">*These times include reading the data (.ibd file) into memory as the parser does not support processing large data.</td>
+      </tr>
+      <tr>
+        <td colspan="5">†The parser generates and prints a warning for every spectrum, leading to system crash.</td>
+      </tr>
+      <tr>
+        <td colspan="5">‡Time given is for typical use. Time in parentheses is when <code>parse.only=TRUE</code> is specified.</td>
+      </tr>
+    </tfoot>
     </tbody>
   </table>
   <!--<input type="file" id="file-input" onchange="readData()"/>
