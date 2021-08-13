@@ -61,7 +61,7 @@
   </div>
 
   <h4>Reading imzML</h4>
-  <p>A number of parsers exist for reading imzML. The table below summarises which language(s) the parsers support and their speed at reading selected publically available datasets.
+  <p>A number of open source parsers exist for reading imzML. The table below summarises which language(s) the parsers support and their speed at reading selected publically available datasets.
     If a parser is missing from the list, please consider <a href="https://github.com/imzML/imzml.github.io/issues">letting us know</a>.
   </p>
   <table>
@@ -159,9 +159,9 @@
           </ul>
         </td>
         <td></td>
-        <td>1.91 s (0.25 s)‡</td>
-        <td>5.51 s (0.57 s)‡</td>
-        <td>11.73 s (0.66 s)‡</td>
+        <td>1.91 s [0.71 s] (0.25 s)‡</td>
+        <td>5.51 s [0.92 s] (0.57 s)‡</td>
+        <td>11.73 s [1.05 s] (0.66 s)‡</td>
       </tr>
     </tbody>
     <tfoot>
@@ -169,10 +169,10 @@
         <td colspan="5">*These times include reading the data (.ibd file) into memory as the parser does not support processing large data.</td>
       </tr>
       <tr>
-        <td colspan="5">†The parser generates and prints a warning for every spectrum, leading to system crash.</td>
+        <td colspan="5">†The parser generates and prints a warning for every spectrum, <a href="https://github.com/sgibb/MALDIquantForeign/issues/32">leading to system crash</a>.</td>
       </tr>
       <tr>
-        <td colspan="5">‡Time given is for typical use. Time in parentheses is when <code>parse.only=TRUE</code> is specified.</td>
+        <td colspan="5">‡Time given is for default use. Time in square brackets is when <code>mass.range</code> and <code>resolution</code> are specified. Time in parentheses is when <code>parse.only=TRUE</code> is specified.</td>
       </tr>
     </tfoot>
     </tbody>
