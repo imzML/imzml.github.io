@@ -29,16 +29,68 @@
 
   <div class="validator">
     <h5>Validator</h5>
-    <p>This validator is a proof of concept and remains a work in progress. Select your .imzML file using the file browser below, and click 'Validate'. If you 
-      experience any issues with the validator, <a href="https://github.com/imzML/imzml.github.io/issues">please let us know</a>.
+    <p>You can use this validator to validate an imzML file on your computer, or view the validation results from
+      publically available datasets on <a href="https://metaspace2020.eu">METASPACE</a>.
+      This validator is a proof of concept and remains a work in progress. If you
+      experience any issues, <a href="https://github.com/imzML/imzml.github.io/issues">please let us
+        know</a>.
     </p>
-    <span><b>Note</b>: This tool is written using <a href="https://webassembly.org/">WebAssembly</a>, meaning that your
-      data never leaves your computer.</span>
-    <div class="file-select">
-      <input type="file" id="file" />
-      <button id="read-file">Validate</button>
 
+    <div class="tab">
+      <button class="tablinks" id="metaspace-tab">METASPACE</button>
+      <button class="tablinks" id="local-file-tab">Local file</button>
     </div>
+
+    <div id="metaspace" class="tabcontent">
+      <p id="metaspace-intro">View validation results from publically available datasets on <a
+          href="https://metaspace2020.eu">METASPACE</a>.
+      </p>
+      <div id="metaspace-dataset">
+        <table id="dataset-table">
+          <thead>
+            <th></th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th>Name</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img
+                  src="https://s3.eu-west-1.amazonaws.com/sm-image-storage-prod/thumb/2022-02-14_23h10m11s/8b27319f08624240bdb103a5e5a7e35e" />
+              </td>
+              <td> Ion image thumbnail
+                fpop dan 1min 2-total ion count</td>
+              <td>
+                <button>Validate</button>
+              </td>
+              <td><img
+                  src="https://s3.eu-west-1.amazonaws.com/sm-image-storage-prod/thumb/2022-02-14_23h10m11s/8b27319f08624240bdb103a5e5a7e35e" />
+              </td>
+              <td> Ion image thumbnail
+                fpop dan 1min 2-total ion count</td>
+              <td>
+                <button>Validate</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="metaspace-outro">Showing 10 of 6000+ </div>
+      </div>
+    </div>
+
+    <div id="local-file" class="tabcontent">
+      <span>Select your .imzML file using the file browser below, and click 'Validate'. <b>Note</b>: This tool is
+        written
+        using <a href="https://webassembly.org/">WebAssembly</a>, meaning that your
+        data never leaves your computer.</span>
+      <div class="file-select">
+        <input type="file" id="file" />
+        <button id="read-file">Validate</button>
+      </div>
+    </div>
+
     <div id="validationResults">
 
     </div>
@@ -61,8 +113,10 @@
   </div>
 
   <h4>Reading imzML</h4>
-  <p>A number of open source parsers exist for reading imzML. The table below summarises which language(s) the parsers support and their speed at reading selected publically available datasets.
-    If a parser is missing from the list, please consider <a href="https://github.com/imzML/imzml.github.io/issues">letting us know</a>.
+  <p>A number of parsers exist for reading imzML. The table below summarises which language(s) the parsers support and
+    their speed at reading selected publically available datasets.
+    If a parser is missing from the list, please consider <a
+      href="https://github.com/imzML/imzml.github.io/issues">letting us know</a>.
   </p>
   <table>
     <thead>
@@ -159,23 +213,25 @@
           </ul>
         </td>
         <td></td>
-        <td>1.91 s‡ <br/>[0.71 s] <br/>(0.25 s)</td>
-        <td>5.51 s‡ <br/>[0.92 s] <br/>(0.57 s)</td>
-        <td>11.73 s‡ <br/>[1.05 s] <br/>(0.66 s)</td>
+        <td>1.91 s‡<br />[0.71 s]<br />(0.25 s)</td>
+        <td>5.51 s‡<br />[0.92 s]<br />(0.57 s)</td>
+        <td>11.73 s‡<br />[1.05 s]<br />(0.66 s)</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="5">*These times include reading the data (.ibd file) into memory as the parser does not support processing large data.</td>
+        <td colspan="5">*These times include reading the data (.ibd file) into memory as the parser does not support
+          processing large data.</td>
       </tr>
       <tr>
-        <td colspan="5">†The parser generates and prints a warning for every spectrum, <a href="https://github.com/sgibb/MALDIquantForeign/issues/32">leading to system crash</a>.</td>
+        <td colspan="5">†The parser generates and prints a warning for every spectrum, leading to system crash.</td>
       </tr>
       <tr>
-        <td colspan="5">‡Time given is for default use. Time in square brackets is when <code>mass.range</code> and <code>resolution</code> are specified. Time in parentheses is when <code>parse.only=TRUE</code> is specified.</td>
+        <td colspan="5">‡Time given is for default use. Time in square brackets is when <code>mass.range</code> and
+          <code>resolution</code> are specified. Time in parentheses is when <code>parse.only=TRUE</code> is specified.
+        </td>
       </tr>
     </tfoot>
-    </tbody>
   </table>
   <!--<input type="file" id="file-input" onchange="readData()"/>
     <script>
